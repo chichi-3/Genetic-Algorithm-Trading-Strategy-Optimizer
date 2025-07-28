@@ -25,3 +25,10 @@ Take Profit Multiplier -->   0.5 to 5.0
 
 With these ranges, the total number of valid combinations is **in the tens of billions**, making brute-force grid search computationally unfeasible.
 
+## About This Project
+
+- This project demonstrates how genetic algorithms can be applied to optimize a multi-indicator trading strategy. It is a conceptual illustration, not an attempt to create a high-frequency or high-performance production optimizer.
+- The fitness function is inspired by the objective functions described in Kaufman’s book, encouraging stable and consistent returns.
+- The data used resulted in 12 in-sample and 2 out-of-sample trades — far too few for real-world validation.
+- The code prioritizes clarity and modular structure over execution speed or memory efficiency.
+- This is not a ready-to-use trading system, but a demonstration of the GA-based optimization framework.
