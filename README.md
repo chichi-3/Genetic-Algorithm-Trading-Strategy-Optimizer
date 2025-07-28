@@ -32,3 +32,6 @@ With these ranges, the total number of valid combinations is **in the tens of bi
 - The data used resulted in 12 in-sample and 2 out-of-sample trades — far too few for real-world validation.
 - The code prioritizes clarity over execution speed or memory efficiency.
 - This is not a ready-to-use trading system, but a demonstration of the GA-based optimization framework.
+
+### Note
+This is a learning project and not a recommendation to trade with the strategies produced. The results are based on limited sample data and are not suitable for real-money use.
