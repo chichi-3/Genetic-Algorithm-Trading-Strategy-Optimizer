@@ -25,6 +25,36 @@ Take Profit Multiplier -->   0.5 to 5.0
 
 With these ranges, the total number of valid combinations is **in the tens of billions**, making brute-force grid search computationally unfeasible.
 
+## Genetic Algorithm Process
+
+#### 1. Initialization
+- A large initial population (1,000–5,000 chromosomes) is randomly generated.
+- Each chromosome is an 8-gene string, representing one unique strategy configuration.
+- This population represents the first generation of strategies.
+
+#### 2. Evaluation & Propagation
+- Each chromosome is evaluated using a fitness function (e.g., Information Ratio).
+- Chromosomes are ranked by fitness in descending order.
+- Top-performing chromosomes are copied multiple times to form the core of the next generation.
+- This step retains and promotes the fittest solutions for further evolution.
+
+#### 3. Mating (Crossover)
+- Two parent chromosomes are randomly selected from the pool.
+- A random crossover point (1 to 7) divides their genes into two segments.
+- Genes before and after the crossover point are swapped between parents to produce two new offspring.
+- This continues until 10–15% of the new generation is created through crossover.
+
+#### 4. Mutation
+- A subset of chromosomes is randomly chosen for mutation.
+- One gene in each selected chromosome is randomly replaced with a new valid value from its range.
+- Mutation is applied to around 10% of the population to preserve genetic diversity and explore new regions of the solution space.
+
+#### 5. Convergence & Repetition
+- After each generation, the top-performing chromosome and its fitness score are saved.
+- The GA continues for a fixed number of generations (typically around 100).
+- To improve robustness, the entire GA process is repeated up to 5 times with different random seeds.
+- The best chromosome from all runs is selected as the final solution.
+
 ## About This Project
 
 - This project demonstrates how genetic algorithms can be applied to optimize a multi-indicator trading strategy. It is a conceptual illustration, not an attempt to create a high-frequency or high-performance production optimizer.
