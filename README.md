@@ -14,14 +14,14 @@ Each individual strategy is represented as an **8-gene chromosome**, where each 
 
 Description               Range / Options             
 
-MA Type                -->   0=SMA, 1=EMA, 2=WMA, 3=TMA  
-Fast MA Length         -->   5 to 30        
-Slow MA Length         -->   20 to 100      
-RSI Length             -->   5 to 30        
-RSI Oversold Threshold -->   10 to 40       
-ATR Period             -->   5 to 30        
-Stop Loss Multiplier   -->   0.5 to 5.0       
-Take Profit Multiplier -->   0.5 to 5.0       
+- MA Type                -->   0=SMA, 1=EMA, 2=WMA, 3=TMA
+- Fast MA Length         -->   5 to 30
+- Slow MA Length         -->   20 to 100
+- RSI Length             -->   5 to 30
+- RSI Oversold Threshold -->   10 to 40
+- ATR Period             -->   5 to 30
+- Stop Loss Multiplier   -->   0.5 to 5.0
+- Take Profit Multiplier -->   0.5 to 5.0       
 
 With these ranges, the total number of valid combinations is **in the tens of billions**, making brute-force grid search computationally unfeasible.
 
@@ -54,6 +54,8 @@ With these ranges, the total number of valid combinations is **in the tens of bi
 - The GA continues for a fixed number of generations (typically around 100).
 - To improve robustness, the entire GA process is repeated up to 5 times with different random seeds.
 - The best chromosome from all runs is selected as the final solution.
+
+Once the best-performing parameter set is found using in-sample data, it is tested on a separate out-of-sample dataset. This helps verify the strategy's robustness and ensures it has not been overfitted. Performance on OOS data confirms whether the solution generalizes well beyond the training window.
 
 ## About This Project
 
