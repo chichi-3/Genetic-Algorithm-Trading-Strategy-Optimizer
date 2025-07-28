@@ -5,3 +5,23 @@ This project implements a Genetic Algorithm (GA) to optimize parameters of techn
 Optimizing trading strategies with multiple technical indicators quickly becomes a combinatorial challenge. For instance, even modest parameter ranges across just 8 variables can result in billions of possible combinations. Exhaustively testing all of them (grid search) is computationally expensive and inefficient.
 
 This project demonstrates how a Genetic Algorithm (GA) can efficiently explore this space to find high-performing configurations, without needing to test every possibility.
+
+## Chromosome Design and Parameter Ranges
+
+Each individual strategy is represented as an **8-gene chromosome**, where each gene corresponds to a strategy parameter. These genes are initialized and evolved over generations.
+
+**Parameter ranges:**
+
+Description               Range / Options             
+
+MA Type                -   0=SMA, 1=EMA, 2=WMA, 3=TMA  
+Fast MA Length         -   Integer from 5 to 30        
+Slow MA Length         -   Integer from 20 to 100      
+RSI Length             -   Integer from 5 to 30        
+RSI Oversold Threshold -   Integer from 10 to 40       
+ATR Period             -   Integer from 5 to 30        
+Stop Loss Multiplier   -   Float from 0.5 to 5.0       
+Take Profit Multiplier -   Float from 0.5 to 5.0       
+
+With these ranges, the total number of valid combinations is **in the tens of billions**, making brute-force grid search computationally unfeasible.
+
